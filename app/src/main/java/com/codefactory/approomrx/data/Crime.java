@@ -10,7 +10,7 @@ public class Crime {
 
     @PrimaryKey
     @NonNull
-    private String id;
+    private int id;
 
     @NonNull
     @ColumnInfo(name = "crime_name")
@@ -22,11 +22,11 @@ public class Crime {
 
 
     @NonNull
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(@NonNull String id) {
+    public void setId(@NonNull int id) {
         this.id = id;
     }
 

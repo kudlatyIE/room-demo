@@ -20,4 +20,25 @@ public class Person {
     @NonNull
     @ColumnInfo(name = "crime_type_id")
     int crimeTypeId;
+
+    public int getId() {
+        return id;
+    }
+
+    @NonNull
+    public String getName() {
+        return name;
+    }
+
+    public void setName(@NonNull String name) {
+        this.name = name;
+    }
+
+    public int getCrimeTypeId() {
+        return crimeTypeId;
+    }
+
+    public void setCrimeTypeId(int crimeTypeId) {
+        this.crimeTypeId = crimeTypeId;
+    }
 }

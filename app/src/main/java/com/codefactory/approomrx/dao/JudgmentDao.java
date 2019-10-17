@@ -33,7 +33,7 @@ public interface JudgmentDao {
     LiveData<List<JudgmentCrimeAndPerson>> findLoansByNameAfter(String userName, Date after);
 
     @Insert()
-    void insertJudgment(Judgment judgment);
+    long insertJudgment(Judgment judgment);
 
     @Query("DELETE FROM table_judgment")
     void deleteAll();
