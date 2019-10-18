@@ -1,5 +1,6 @@
 package com.codefactory.approomrx.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -16,29 +17,29 @@ import java.util.List;
 public interface PersonDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Person badGuy);
+    long insert(Person badGuy);
 
     @Update(onConflict = OnConflictStrategy.IGNORE)
     int update(Person badGuy);
 
-    @Query("DELETE FROM table_person_bad_guy")
+    @Query("DELETE FROM table_person")
     void deleteAll();
 
-    @Query("DELETE FROM table_person_bad_guy WHERE id = :code")
+    @Query("DELETE FROM table_person WHERE id = :code")
     void deleteBadGuyByCode(int code);
 
     @Delete
     void deleteBadGuys( Person... badGuys);
 
-    @Query("SELECT * FROM table_person_bad_guy")
-    MutableLiveData<List<Person>> getBadGuyAll();
+    @Query("SELECT * FROM table_person")
+    LiveData<List<Person>> getBadGuyAll();
 
 //    @Query("SELECT * FROM table_person_bad_guy "
 //            + "INNER JOIN table_crimeType_join "
 //            +" ON table_badGuy.crime_area_id = table_crimeType_join.crimeId ")
 //    MutableLiveData<List<BadGuy>> getBadGuyAllByCrime();
 
-    @Query("SELECT * FROM table_person_bad_guy WHERE id = :code")
-    MutableLiveData<Person> getBadGuyByCode(int code);
+    @Query("SELECT * FROM table_person WHERE id = :code")
+    LiveData<Person> getBadGuyByCode(int code);
 
 }

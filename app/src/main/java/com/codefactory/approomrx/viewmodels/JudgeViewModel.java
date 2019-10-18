@@ -35,7 +35,7 @@ public class JudgeViewModel extends AndroidViewModel {
     }
 
     private void subscribeDataChanges(){
-        LiveData<List<JudgmentCrimeAndPerson>> liveData = appDataBase.judgmentDao().findAllWithUserAndBook();
+        LiveData<List<JudgmentCrimeAndPerson>> liveData = appDataBase.judgmentDao().findAllWithPersonAndCrime();
 
         // Instead of exposing the list of Judgment, apply a transformation and expose data as Strings.
 

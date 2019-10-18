@@ -23,7 +23,7 @@ import java.util.Date;
 @TypeConverters(DateConverter.class)
 public class Judgment {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     @NonNull
     private int id;
 
@@ -32,7 +32,7 @@ public class Judgment {
     private Date endTime;
 
     @ColumnInfo(name="person_id")
-    private int personId;
+    private long personId;
 
     @ColumnInfo(name="crime_id")
     private int crimeId;
@@ -61,11 +61,11 @@ public class Judgment {
         this.endTime = endTime;
     }
 
-    public int getPersonId() {
+    public long getPersonId() {
         return personId;
     }
 
-    public void setPersonId(int personId) {
+    public void setPersonId(long personId) {
         this.personId = personId;
     }
 

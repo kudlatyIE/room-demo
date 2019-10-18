@@ -9,7 +9,7 @@ import java.util.Date;
 
 public class JudgmentCrimeAndPerson {
 
-    private int id;
+    public int id;
 
     @ColumnInfo(name="crimeName")
     private String crimeName;
@@ -23,13 +23,13 @@ public class JudgmentCrimeAndPerson {
     @TypeConverters(DateConverter.class)
     private Date endTime;
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public int getId() {
+//        return id;
+//    }
+//
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getCrimeName() {
         return crimeName;

@@ -1,5 +1,6 @@
 package com.codefactory.approomrx.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
@@ -15,7 +16,7 @@ import java.util.List;
 public interface CrimeDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insert(Crime crime);
+    long insert(Crime crime);
 
     @Update(onConflict = OnConflictStrategy.IGNORE)//@Query("UPDATE table_crimeType SET crime_typeName = :crime")
     int update(Crime crime);
@@ -24,13 +25,13 @@ public interface CrimeDao {
     void deleteAll();
 
     @Query("SELECT * FROM table_crime WHERE id = :code")
-    MutableLiveData<Crime> getCrimesById(int code);
+    LiveData<Crime> getCrimesById(int code);
 
-    @Query("SELECT * FROM table_crime WHERE crime_typeName LIKE :crimeString OR crime_typeDescription LIKE :crimeString")
-    MutableLiveData<List<Crime>> getCrimesByText(String crimeString);
+    @Query("SELECT * FROM table_crime WHERE crime_name LIKE :crimeString OR crime_description LIKE :crimeString")
+    LiveData<List<Crime>> getCrimesByText(String crimeString);
 
     @Query("SELECT * FROM table_crime")
-    MutableLiveData<List<Crime>> getCrimesAll();
+    LiveData<List<Crime>> getCrimesAll();
 
 
 }

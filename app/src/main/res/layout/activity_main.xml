@@ -152,7 +152,7 @@
         app:layout_constraintTop_toBottomOf="@+id/days_to_editText" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/find_byName_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -172,11 +172,11 @@
         android:ems="10"
         android:hint="text pattern"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="@+id/button2"
+        app:layout_constraintBottom_toBottomOf="@+id/find_byName_button"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/find_byName_button"
         app:layout_constraintVertical_bias="1.0" />
 
     <Button

@@ -102,6 +102,7 @@ public class DataInit {
         person.setName(name);
         person.setCrimeTypeId(crime.getId());
         db.personDAO().insert(person);
+        Log.d(TAG, "inserted person >> name: "+name+", ID: "+person.getId());
         return person;
     }
 

@@ -8,16 +8,15 @@ import androidx.room.PrimaryKey;
 @Entity(tableName = "table_crime")
 public class Crime {
 
-    @PrimaryKey
-    @NonNull
-    private int id;
+    @PrimaryKey(autoGenerate = true)
+    public int id;
 
     @NonNull
     @ColumnInfo(name = "crime_name")
     private String crimeTypeName;
 
     @NonNull
-    @ColumnInfo(name = "crime_tdescription")
+    @ColumnInfo(name = "crime_description")
     private String crimeTypeDescription;
 
 

@@ -5,13 +5,12 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "table_person_bad_guy")
+@Entity(tableName = "table_person")
 public class Person {
 
     @PrimaryKey(autoGenerate = true)
-    @NonNull
     @ColumnInfo(name = "id")
-    private int id;
+    public int id;
 
     @NonNull
     @ColumnInfo(name = "person_name")
@@ -19,7 +18,11 @@ public class Person {
 
     @NonNull
     @ColumnInfo(name = "crime_type_id")
-    int crimeTypeId;
+    long crimeTypeId;
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getId() {
         return id;
@@ -34,11 +37,11 @@ public class Person {
         this.name = name;
     }
 
-    public int getCrimeTypeId() {
+    public long getCrimeTypeId() {
         return crimeTypeId;
     }
 
-    public void setCrimeTypeId(int crimeTypeId) {
+    public void setCrimeTypeId(long crimeTypeId) {
         this.crimeTypeId = crimeTypeId;
     }
 }
